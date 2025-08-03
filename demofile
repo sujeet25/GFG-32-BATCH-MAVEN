@@ -1,11 +1,9 @@
 pipeline {
     agent any
+
 tools
-
 {
-
 	maven 'MAVEN_HOME'
-
 }
     stages {
         stage('Checkout') {
@@ -25,13 +23,7 @@ tools
                 // Run tests if applicable
                 sh 'mvn test'
             }
-        }
-        stage('Deploy') {
-            steps {
-                // Deploy your artifact, if necessary
-                // Example: sh 'mvn deploy'
-            }
-        }
+        }        
     }
     
 
